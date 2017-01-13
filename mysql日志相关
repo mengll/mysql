@@ -7,3 +7,6 @@ mysql =>>set GLOBAL general_log ='off'
 2)使用warning获取优化后的sql
  explain extends sql 
  show warnings
+
+3) 开启查询的参数配置
+ mysql >> --column-type-info 
