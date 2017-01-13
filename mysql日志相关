@@ -10,3 +10,10 @@ mysql =>>set GLOBAL general_log ='off'
 
 3) 开启查询的参数配置
  mysql >> --column-type-info 
+ 
+4)获取当前的错误的相关信息
+
+perror mysql错误号 perror 5
+
+5)mysql 慢查询
+rows是估计的函数 如果是链表查询 会产生笛卡尔积 表1的数量* 表2的数量
