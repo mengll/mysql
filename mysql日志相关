@@ -1,0 +1,9 @@
+1）mysql开启查询日志
+SET GLOBAL general_log = 'on'
+mysql >> select * from mysql.general_log
+//关闭日志
+mysql =>>set GLOBAL general_log ='off'
+
+2)使用warning获取优化后的sql
+ explain extends sql 
+ show warnings
