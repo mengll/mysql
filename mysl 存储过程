@@ -1,0 +1,70 @@
+1. 简单的创建存储过程的方法
+delimiter $$  //创建结束符
+
+//创建存储过程的方法
+create procedure showa() //方法名 可能会带有参数的传递
+ begin  //函数的开始
+     //可能包含多条失去了语句
+     show tables；
+ end；
+ $$
+ 
+ delimiter ; //转化当前的结束符
+ 
+ 
+ 2//创建带有变量的存储过程的方法
+delimiter $$
+ create procedure uname()
+ begin 
+    declare my_name var_char(2) default '';
+    //通过set赋值
+    set my_name="dsa";
+    //通过语句赋值
+    select uname into my_name from ucuser where uid =2
+    //获取当前传递的值
+    select my_name
+ end 
+ $$
+ delimiter ; 
+ 
+ 1）相关的案例
+  delimiter $$
+  begin 
+      declare Global_name 全局变量
+      //开启新的代码块
+      begin 
+        declare uname int default 0;
+        declare uage string default '';
+        //如果想获取这个代码块的值就要使用select
+        select uname,uage
+      end; //结束的时候加分号 块作用域 只是在块的内部起作用
+      //结束代码
+  
+  end
+  
+  
+  3)存储过程的参数
+        delimiter $$
+       //创建带有输入值的采纳数
+       create procedure inparam(IN um varchar(32))
+       begin 
+           declare uname varchar(32) default 32
+           set uname=um
+           select uname
+       end 
+       $$
+       delimiter ; //转化成原始的结束符
+       
+       2)创建带有返回值的存储过程
+           
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+ 
