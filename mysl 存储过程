@@ -60,8 +60,83 @@ delimiter $$
        
        
        
-       
-       
+ 4）条件的查询的方式
+  delimiter $$
+  create procedure love(IN age int)
+  begin 
+  declare uage int default 0;
+  if (age =2)
+  then
+  set uage=23;
+  else
+  set uage =34;
+  end if ;
+  select uage;
+  end;
+  $$
+  delimiter
+  
+  dellimiter $$
+  create procedure mk(IN pa int)
+  begin
+  declare pop int default 0;
+  if (pa =2)
+  then
+    set pop=23;
+  elseif(pa =34)
+  then 
+ set pop=35;
+ else
+ set pop=89;
+ 
+ end if;
+ select pop;
+ end;
+ delimiter ;
+ 
+ 
+ 5)循环的方式，执行语句
+ delimiter $$
+ create procedure kl(IN num int)
+ begin 
+ declare i int default 0;
+ while(i<=num) do
+ begin 
+    select i;
+    set i=i+1;
+  end;
+  end while;
+  end;
+  
+ delimiter ;
+ 
+ 
+ 
+ create procedure kl(IN num int)
+ begin 
+ declare i int default 0;
+ repeat
+ begin 
+    select i;
+    set i=i+1;
+  end;
+  until i>=100
+  end repeat;
+  end;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+  
        
        
        
