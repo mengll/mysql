@@ -1,0 +1,12 @@
+1）count
+当count（*） 全部列方式汇总，会中的是全部的数据， 当 count(name) 当前的 为null 的时候汇总的数据会排除（空）的  count中输入大参数不同输出的结果是不同的
+
+2）sum 
+当sum 函数聚合计算的时候，其中的unull是被忽略的   聚合函数会将null排除在外，但是count 并不会排除
+
+3）avg 的函数语法和sum函数执行的是一样
+
+4） 使用聚合函数删除重复值（使用关键字DISTINCT）
+select count( distinct product_type) from table
+
+5)聚合group by 的时表中的null转化成空的数据类型
