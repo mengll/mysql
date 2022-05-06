@@ -61,3 +61,23 @@ ALTER USER 'username'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
 FLUSH PRIVILEGES;
 
 ```
+
+### 创建视图
+```
+ mysql 在创建视图的时候 
+  union all 的时候会 不能添加 （）不能执行不成功
+  #错误
+   create view tb as （
+  select id ,name,`level` from a 
+  union all
+  select id ,name,`level` from b
+  ）
+  
+  # 正解
+  create view tb as 
+  select id ,name,`level` from a 
+  union all
+  select id ,name,`level` from b
+```
+
+
